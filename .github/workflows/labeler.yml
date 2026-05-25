@@ -1,11 +1,17 @@
 name: "Pull Request Labeler"
-on:
+on:  # zizmor: ignore[dangerous-triggers] labeler requires pull_request_target to label fork PRs
 - pull_request_target
+
+permissions:
+  contents: read
 
 jobs:
   triage:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-    - uses: actions/labeler@f27b608878404679385c85cfa523b85ccb86e213
+    - uses: chainguard-actions/actions-labeler@adc05fa3cfb3048f48f79b629086582c58d5e764 # v6.0.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
