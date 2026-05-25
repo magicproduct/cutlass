@@ -7,8 +7,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   mark-inactive-30d:
+    name: Mark 30-day inactive
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -38,6 +43,7 @@ jobs:
           days-before-pr-close: -1
           operations-per-run: 50
   mark-inactive-90d:
+    name: Mark 90-day inactive
     runs-on: ubuntu-latest
     permissions:
       issues: write

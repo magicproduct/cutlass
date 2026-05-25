@@ -5,8 +5,13 @@ on:  # zizmor: ignore[dangerous-triggers] labeler requires pull_request_target t
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   triage:
+    name: Label PR
     runs-on: ubuntu-latest
     permissions:
       contents: read
