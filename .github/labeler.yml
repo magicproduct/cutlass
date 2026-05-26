@@ -1,0 +1,3 @@
+# Minimal labeler config — no labels applied automatically.
+# Add path-globbed labels here if needed: https://github.com/actions/labeler
+{}
