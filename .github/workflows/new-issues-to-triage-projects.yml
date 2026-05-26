@@ -7,10 +7,19 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
 jobs:
   assign_one_project:
     runs-on: ubuntu-latest
     name: Assign to New Issues to Triage Project
+    permissions:
+      issues: write
     steps:
     - name: Process bug issues
       uses: docker://takanabe/github-actions-automate-projects:v0.0.1
