@@ -14,7 +14,7 @@ concurrency:
 jobs:
   mark-inactive-30d:
     name: Mark 30-day inactive
-    runs-on: ubuntu-latest
+    runs-on: gh-8cpu-runner-mles
     permissions:
       issues: write
       pull-requests: write
@@ -44,7 +44,7 @@ jobs:
           operations-per-run: 50
   mark-inactive-90d:
     name: Mark 90-day inactive
-    runs-on: ubuntu-latest
+    runs-on: gh-8cpu-runner-mles
     permissions:
       issues: write
       pull-requests: write
