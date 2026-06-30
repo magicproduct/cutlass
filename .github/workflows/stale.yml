@@ -20,7 +20,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Mark 30 day inactive issues and pull requests
-        uses: actions/stale@98ed4cb500039dbcccf4bd9bedada4d0187f2757 # v3.0.19
+        uses: chainguard-actions/actions-stale@e45ca0184544ad63568317fe3759d62964b31174 # v10.3.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: >
@@ -50,7 +50,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Mark 90 day inactive issues and pull requests
-        uses: actions/stale@98ed4cb500039dbcccf4bd9bedada4d0187f2757 # v3.0.19
+        uses: chainguard-actions/actions-stale@e45ca0184544ad63568317fe3759d62964b31174 # v10.3.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: >
