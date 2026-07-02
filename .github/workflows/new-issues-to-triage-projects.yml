@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   assign_one_project:
-    runs-on: ubuntu-latest
+    runs-on: gh-4cpu-runner-mles
     name: Assign to New Issues to Triage Project
     permissions:
       issues: write
